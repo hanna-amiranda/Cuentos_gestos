@@ -3,8 +3,8 @@ import SelectorEdad from "./components/SelectorEdad";
 import Biblioteca from "./components/Biblioteca";
 import PreguntaAudio from "./components/PreguntaAudio";
 import LectorEscena from "./components/LectorEscena";
+import GestosGlobal from "./components/GestosGlobal";
 import { cuentosPorEdad } from "./data/cuentos";
-import PruebaGestos from "./components/PruebaGestos";
 
 export default function App() {
   const [pantalla, setPantalla] = useState("edad");
@@ -12,24 +12,19 @@ export default function App() {
   const [cuento, setCuento] = useState(null);
   const [conAudio, setConAudio] = useState(false);
 
-  if (pantalla === "prueba") {
-    return <PruebaGestos onVolver={() => setPantalla("edad")} />;
-  }
+  let contenido;
 
   if (pantalla === "edad") {
-    return (
+    contenido = (
       <SelectorEdad
-        onProbar={() => setPantalla("prueba")}
         onElegir={(rango) => {
           setEdad(rango);
           setPantalla("biblioteca");
         }}
       />
     );
-  }
-
-  if (pantalla === "biblioteca") {
-    return (
+  } else if (pantalla === "biblioteca") {
+    contenido = (
       <Biblioteca
         cuentos={cuentosPorEdad(edad)}
         onVolver={() => setPantalla("edad")}
@@ -39,10 +34,8 @@ export default function App() {
         }}
       />
     );
-  }
-
-  if (pantalla === "audio") {
-    return (
+  } else if (pantalla === "audio") {
+    contenido = (
       <PreguntaAudio
         cuento={cuento}
         onVolver={() => setPantalla("biblioteca")}
@@ -52,13 +45,20 @@ export default function App() {
         }}
       />
     );
+  } else {
+    contenido = (
+      <LectorEscena
+        cuento={cuento}
+        conAudio={conAudio}
+        onSalir={() => setPantalla("biblioteca")}
+      />
+    );
   }
 
   return (
-    <LectorEscena
-      cuento={cuento}
-      conAudio={conAudio}
-      onSalir={() => setPantalla("biblioteca")}
-    />
+    <>
+      {contenido}
+      <GestosGlobal />
+    </>
   );
 }

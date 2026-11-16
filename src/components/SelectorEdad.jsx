@@ -1,4 +1,4 @@
-export default function SelectorEdad({ onElegir, onProbar }) {
+export default function SelectorEdad({ onElegir }) {
   return (
     <div>
       <h1>📚 ¡Hola! ¿Cuántos años tienes?</h1>
@@ -12,9 +12,6 @@ export default function SelectorEdad({ onElegir, onProbar }) {
           <span className="titulo">9 a 12 años</span>
         </button>
       </div>
-      <button className="boton-chico boton-prueba" onClick={onProbar}>
-        🖐️ Probar gestos
-      </button>
     </div>
   );
 }
