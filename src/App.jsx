@@ -4,6 +4,7 @@ import Biblioteca from "./components/Biblioteca";
 import PreguntaAudio from "./components/PreguntaAudio";
 import LectorEscena from "./components/LectorEscena";
 import { cuentosPorEdad } from "./data/cuentos";
+import PruebaGestos from "./components/PruebaGestos";
 
 export default function App() {
   const [pantalla, setPantalla] = useState("edad");
@@ -11,9 +12,14 @@ export default function App() {
   const [cuento, setCuento] = useState(null);
   const [conAudio, setConAudio] = useState(false);
 
+  if (pantalla === "prueba") {
+    return <PruebaGestos onVolver={() => setPantalla("edad")} />;
+  }
+
   if (pantalla === "edad") {
     return (
       <SelectorEdad
+        onProbar={() => setPantalla("prueba")}
         onElegir={(rango) => {
           setEdad(rango);
           setPantalla("biblioteca");
