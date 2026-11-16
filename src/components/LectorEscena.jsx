@@ -1,4 +1,5 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import { guardarProgreso } from "../lib/progreso";
 import Pregunta from "./Pregunta";
 import useAudio from "../hooks/useAudio";
 
@@ -11,6 +12,19 @@ export default function LectorEscena({ cuento, conAudio, onSalir }) {
 
   const escena = cuento.escenas.find((e) => e.id === escenaId);
 
+  const guardado = useRef(false);
+
+  useEffect(() => {
+    if (escena.tipo === "fin" && !guardado.current) {
+      guardado.current = true;
+      guardarProgreso({
+        cuentoId: cuento.id,
+        edad: cuento.edad,
+        buenas,
+        total,
+      });
+    }
+  }, [escena.tipo]); // eslint-disable-line react-hooks/exhaustive-deps
   // Lee la escena automáticamente cuando cambia
   useEffect(() => {
     if (!audioActivo) return;
