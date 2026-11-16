@@ -1,0 +1,26 @@
+{
+  "id": "foto-volcan",
+  "titulo": "La foto del volcán",
+  "edad": "9-12",
+  "emoji": "🌋",
+  "escenas": [
+    { "id": "e1", "tipo": "narracion", "emoji": "📲", "texto": "Camila estaba en el grupo de WhatsApp del colegio cuando llegó una foto de un volcán lanzando lava y fuego. El mensaje decía: «URGENTE: el Misti está en erupción. ¡Reenvía a todos!»", "siguiente": "e2" },
+    { "id": "e2", "tipo": "narracion", "emoji": "😰", "texto": "En minutos, el grupo se llenó de mensajes asustados. Alguien escribió: «Mi tío dice que es verdad». Otro: «Ya lo reenvié a mi familia».", "siguiente": "e3" },
+    { "id": "e3", "tipo": "decision", "emoji": "🤔", "texto": "¿Qué hace Camila primero?",
+      "opciones": [
+        { "texto": "Reenviarlo: si es verdad, es mejor avisar rápido", "siguiente": "e4a", "buena": false },
+        { "texto": "Detenerse a investigar antes de reenviar", "siguiente": "e4b", "buena": true },
+        { "texto": "Ignorarlo y no decir nada", "siguiente": "e4c", "buena": false }
+      ] },
+    { "id": "e4a", "tipo": "narracion", "emoji": "📤", "texto": "Camila reenvió la foto. Pronto llegó a mucha gente, y varias familias empezaron a preparar mochilas de emergencia sin saber si era real.", "siguiente": "e5" },
+    { "id": "e4b", "tipo": "narracion", "emoji": "🔎", "texto": "Camila respiró hondo. Se dio cuenta de que el mensaje no decía quién tomó la foto, ni cuándo, ni dónde. Solo pedía reenviar rápido.", "siguiente": "e5" },
+    { "id": "e4c", "tipo": "narracion", "emoji": "🤐", "texto": "Camila no dijo nada. Mientras tanto, el rumor seguía creciendo en el grupo porque nadie lo cuestionaba.", "siguiente": "e5" },
+    { "id": "e5", "tipo": "decision", "emoji": "🧭", "texto": "Camila quiere comprobar si es cierto. ¿Qué es lo MÁS confiable?",
+      "opciones": [
+        { "texto": "Revisar las páginas oficiales del Instituto Geofísico del Perú o de Defensa Civil", "siguiente": "fin", "buena": true, "retro": "¡Exacto! Las instituciones que vigilan los volcanes son la fuente más confiable. Además, una búsqueda de la imagen reveló que la foto era de un volcán de otro país, de hace años." },
+        { "texto": "Preguntar en el grupo quién más lo vio", "siguiente": "fin", "buena": false, "retro": "Que muchos lo repitan no lo hace verdad. Todos podrían estar repitiendo el mismo rumor." },
+        { "texto": "Fijarse si la foto se ve muy real", "siguiente": "fin", "buena": false, "retro": "Una foto real puede ser vieja o de otro lugar, y una falsa puede verse muy real. Mejor revisar la fuente." }
+      ] },
+    { "id": "fin", "tipo": "fin", "emoji": "🌟", "texto": "Camila escribió en el grupo: «Tranquilos, la foto es de otro volcán y de hace años. Los reportes oficiales no dicen nada de erupción». Todos respiraron aliviados.", "aprendizaje": "Antes de reenviar, revisa quién lo dijo, cuándo y dónde. Confirma en fuentes oficiales." }
+  ]
+}

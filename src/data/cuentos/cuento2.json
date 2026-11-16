@@ -1,0 +1,26 @@
+{
+  "id": "premio-rana",
+  "titulo": "El premio de la rana",
+  "edad": "6-8",
+  "emoji": "🐸",
+  "escenas": [
+    { "id": "e1", "tipo": "narracion", "emoji": "📱", "texto": "Tomi jugaba en la tablet de su casa cuando apareció una ventana con una rana que decía: «¡GANASTE un helado gratis!»", "siguiente": "e2" },
+    { "id": "e2", "tipo": "narracion", "emoji": "🍦", "texto": "La ventana pedía: «Escribe tu nombre completo, tu dirección y la clave de WiFi de tu casa para recibir tu premio».", "siguiente": "e3" },
+    { "id": "e3", "tipo": "decision", "emoji": "🤔", "texto": "¿Qué debería hacer Tomi?",
+      "opciones": [
+        { "texto": "Escribir todos los datos rápido", "siguiente": "e4a", "buena": false },
+        { "texto": "Cerrar la ventana y llamar a mamá", "siguiente": "e4b", "buena": true },
+        { "texto": "Mandarle el premio a sus amigos", "siguiente": "e4c", "buena": false }
+      ] },
+    { "id": "e4a", "tipo": "narracion", "emoji": "😟", "texto": "Tomi escribió todo. Pero nunca llegó ningún helado, y a su mamá le preocupó que alguien extraño ahora supiera dónde viven.", "siguiente": "e5" },
+    { "id": "e4b", "tipo": "narracion", "emoji": "👩", "texto": "Mamá miró la pantalla y dijo: «Hiciste muy bien en avisarme. Este mensaje tiene señales de alerta».", "siguiente": "e5" },
+    { "id": "e4c", "tipo": "narracion", "emoji": "📨", "texto": "Los amigos de Tomi también quisieron el premio y casi escriben sus datos. ¡Un mensaje engañoso puede llegar a muchos niños!", "siguiente": "e5" },
+    { "id": "e5", "tipo": "decision", "emoji": "🚨", "texto": "Mamá le pregunta: «¿Cuál de estas es una señal de alerta?»",
+      "opciones": [
+        { "texto": "Regala algo muy bueno sin que hayas hecho nada", "siguiente": "fin", "buena": true, "retro": "¡Correcto! Cuando algo parece demasiado bueno para ser verdad, hay que dudar." },
+        { "texto": "Tiene dibujos de colores", "siguiente": "fin", "buena": false, "retro": "Los dibujos no dicen si algo es falso. La señal de alerta es que pide datos y regala cosas sin motivo." },
+        { "texto": "Está escrito en español", "siguiente": "fin", "buena": false, "retro": "El idioma no importa. Fíjate en lo que pide: datos personales a cambio de un premio." }
+      ] },
+    { "id": "fin", "tipo": "fin", "emoji": "🌟", "texto": "Tomi cerró la ventana y, junto a mamá, se comió un helado de verdad en la heladería de la esquina.", "aprendizaje": "Nunca des tu nombre, dirección o claves por internet. Si un mensaje pide datos, avisa a un adulto." }
+  ]
+}

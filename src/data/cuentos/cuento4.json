@@ -1,0 +1,26 @@
+{
+  "id": "audio-director",
+  "titulo": "El audio del director",
+  "edad": "9-12",
+  "emoji": "🎙️",
+  "escenas": [
+    { "id": "e1", "tipo": "narracion", "emoji": "🎧", "texto": "Mateo estaba haciendo la tarea cuando le llegó un audio de voz que sonaba como el director del colegio: «Mañana no habrá clases. Avisen a todos».", "siguiente": "e2" },
+    { "id": "e2", "tipo": "narracion", "emoji": "🤨", "texto": "El audio venía de un número que Mateo no tenía guardado. No decía ninguna fecha ni el nombre del colegio, y ya tenía la etiqueta «Reenviado muchas veces».", "siguiente": "e3" },
+    { "id": "e3", "tipo": "decision", "emoji": "🤔", "texto": "¿Qué hace Mateo?",
+      "opciones": [
+        { "texto": "Dejar la tarea y reenviar el audio a sus compañeros", "siguiente": "e4a", "buena": false },
+        { "texto": "Fijarse quién lo envió y qué detalles faltan", "siguiente": "e4b", "buena": true },
+        { "texto": "Decidir que mañana no va al colegio", "siguiente": "e4c", "buena": false }
+      ] },
+    { "id": "e4a", "tipo": "narracion", "emoji": "📤", "texto": "Mateo lo reenvió y varios compañeros dejaron de estudiar para el examen del día siguiente. ¡Qué problema si el audio era falso!", "siguiente": "e5" },
+    { "id": "e4b", "tipo": "narracion", "emoji": "🔍", "texto": "Mateo notó tres cosas raras: número desconocido, ninguna fecha y ningún aviso oficial. Hoy en día, hasta las voces se pueden imitar con computadoras.", "siguiente": "e5" },
+    { "id": "e4c", "tipo": "narracion", "emoji": "😴", "texto": "Mateo se quedó en casa. Pero a media mañana su amigo le escribió: «¿Dónde estás? ¡Hay examen!»", "siguiente": "e5" },
+    { "id": "e5", "tipo": "decision", "emoji": "🧭", "texto": "¿Cuál es la mejor forma de confirmar si es cierto?",
+      "opciones": [
+        { "texto": "Preguntar a su profesora o revisar el canal oficial del colegio", "siguiente": "fin", "buena": true, "retro": "¡Correcto! Las personas e instituciones que de verdad deciden eso son la mejor fuente." },
+        { "texto": "Esperar a que más compañeros digan que también lo recibieron", "siguiente": "fin", "buena": false, "retro": "Si todos recibieron el mismo audio falso, será el mismo engaño repetido muchas veces." },
+        { "texto": "Escuchar el audio otra vez para ver si la voz parece real", "siguiente": "fin", "buena": false, "retro": "Hoy las voces se pueden copiar muy bien. Sonar real no significa que sea verdadero." }
+      ] },
+    { "id": "fin", "tipo": "fin", "emoji": "🌟", "texto": "La profesora confirmó: «Hay clases normales, ese audio es falso». Mateo avisó al grupo y todos llegaron preparados al examen.", "aprendizaje": "Que algo lo repita mucha gente no lo hace verdadero. Confirma siempre con la fuente oficial." }
+  ]
+}

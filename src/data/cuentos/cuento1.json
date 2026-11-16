@@ -1,0 +1,25 @@
+{
+  "id": "luna-rio",
+  "titulo": "Luna y el rumor del río",
+  "edad": "6-8",
+  "emoji": "🦙",
+  "escenas": [
+    { "id": "e1", "tipo": "narracion", "emoji": "🦙", "texto": "Luna la alpaca comía pasto cerca del río. De pronto, un pato pasó gritando: «¡El río se secó! ¡Ya no hay agua!»", "siguiente": "e2" },
+    { "id": "e2", "tipo": "narracion", "emoji": "😱", "texto": "Los animales empezaron a correr y a repetir lo mismo. Pero Luna todavía no había visto el río.", "siguiente": "e3" },
+    { "id": "e3", "tipo": "decision", "emoji": "🤔", "texto": "¿Qué debería hacer Luna?",
+      "opciones": [
+        { "texto": "Correr con todos y repetir la noticia", "siguiente": "e4a", "buena": false },
+        { "texto": "Ir a mirar el río con sus propios ojos", "siguiente": "e4b", "buena": true },
+        { "texto": "Preguntarle al pato cómo lo sabe", "siguiente": "e4c", "buena": true }
+      ] },
+    { "id": "e4a", "tipo": "narracion", "emoji": "💦", "texto": "Luna corrió y se lo contó a todos. Pero al llegar, ¡el río estaba lleno de agua! Los animales se sintieron confundidos por haber creído sin comprobar.", "siguiente": "e5" },
+    { "id": "e4b", "tipo": "narracion", "emoji": "👀", "texto": "Luna caminó hasta el río y lo vio con sus propios ojos. Estaba un poquito más bajo que ayer, pero tenía agua.", "siguiente": "e5" },
+    { "id": "e4c", "tipo": "narracion", "emoji": "🦆", "texto": "El pato dijo: «Bueno... me lo contó un loro, que lo oyó de una vaca». ¡Nadie lo había visto de verdad!", "siguiente": "e5" },
+    { "id": "e5", "tipo": "decision", "emoji": "🐾", "texto": "Ahora Luna sabe que el río tiene agua. Los animales siguen asustados. ¿Qué hace?",
+      "opciones": [
+        { "texto": "Los lleva al río para que lo vean", "siguiente": "fin", "buena": true, "retro": "¡Muy bien! Mostrar pruebas ayuda a que todos se calmen." },
+        { "texto": "Se queda callada para no meterse en problemas", "siguiente": "fin", "buena": false, "retro": "Si Luna no dice nada, el rumor seguirá corriendo y asustando a todos." }
+      ] },
+    { "id": "fin", "tipo": "fin", "emoji": "🌟", "texto": "Los animales tomaron agua tranquilos, y Luna fue la heroína del día.", "aprendizaje": "Antes de creer o contar una noticia, pregunta quién la vio de verdad y compruébala." }
+  ]
+}
